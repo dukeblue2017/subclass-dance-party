@@ -5,14 +5,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
-
-  this.step = function() {
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
-    setTimeout(function() { this.step; }, timeBetweenSteps);
-  };
-
   this.step();
+
+
+  var oldToggle = this.step.bind(this);
 
   this.setPosition = function(top, left) {
   // Use css top and left properties to position our <span> tag
@@ -31,6 +27,11 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   // return dancer;
 
+};
+makeDancer.prototype.step = function() {
+  // the basic dancer doesn't do anything interesting at all on each step,
+  // it just schedules the next step
+  setTimeout(function() { this.step; }, timeBetweenSteps);
 };
 
 
