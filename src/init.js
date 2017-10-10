@@ -24,7 +24,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      ( Math.random() * 1000 ) + 300
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
@@ -33,10 +33,15 @@ $(document).ready(function() {
   $('.lineUpDancers').on('click', function(event){
     var dancersOnFloor = $('.dancer');
     var bodyWidth = $("body").width();
+    var widthBetween = bodyWidth / dancersOnFloor.length;
+    var midLine = $('body').height() / 2;
+    console.log(midLine)
+    console.log(widthBetween);
     //here we need to divide bodyWidth by number of items
     // then insert new ones at each stop
     for (var i = 0; i < dancersOnFloor.length; i++) {
-      dancersOnFloor[i].style.top = '100px';
+      dancersOnFloor[i].style.left = widthBetween * (i) + 'px';
+      dancersOnFloor[i].style.top = midLine + 'px';
     }
 
   });

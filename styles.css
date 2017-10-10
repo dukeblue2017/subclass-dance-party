@@ -4,8 +4,10 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
-  background-image: url(https://i.ytimg.com/vi/zgCi_kAI3aI/maxresdefault.jpg);
+  background-image: url(https://pre00.deviantart.net/884f/th/pre/i/2006/133/9/7/idyllic_mario_by_blendmaster.png);
   font-size: 18px;
+  background-repeat: repeat no-repeat;
+  background-size: 100%;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -22,7 +24,21 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:50px solid red;
   border-radius:10px;
   position:absolute;
+  -webkit-transform: rotate(7.5deg);
+  -moz-transform: rotate(7.5deg);
+  -ms-transform: rotate(7.5deg);
+  -o-transform: rotate(7.5deg);
+  transform: rotate(7.5deg);
+}
+
+.greenDancer{
+  border:0px solid green;
+
+}
+
+.lakitu {
+  border: none;
 }
