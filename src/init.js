@@ -26,8 +26,19 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    window.dancers.push(dancer)
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $('.lineUpDancers').on('click', function(event){
+    var dancersOnFloor = $('.dancer');
+    var bodyWidth = $("body").width();
+    //here we need to divide bodyWidth by number of items
+    // then insert new ones at each stop
+    for (var i = 0; i < dancersOnFloor.length; i++) {
+      dancersOnFloor[i].style.top = '100px';
+    }
+
   });
 });
 
