@@ -35,8 +35,6 @@ $(document).ready(function() {
     var bodyWidth = $("body").width();
     var widthBetween = bodyWidth / dancersOnFloor.length;
     var midLine = $('body').height() / 2;
-    console.log(midLine)
-    console.log(widthBetween);
     //here we need to divide bodyWidth by number of items
     // then insert new ones at each stop
     for (var i = 0; i < dancersOnFloor.length; i++) {
@@ -45,5 +43,9 @@ $(document).ready(function() {
     }
 
   });
+
+  $('.lakitu').hover(function(event){
+    console.log(this);
+  }, function(event){console.log(2)});;
 });
 

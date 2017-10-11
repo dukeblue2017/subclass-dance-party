@@ -1,10 +1,11 @@
-var BlueDancer = function(top, left, timeBetweenSteps) {
+var Lakitu = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
 
   //this.$node.css({'border-color': 'blue'});
+  this.$node.addClass('characters');
   this.$node.addClass('lakitu');
-  this.$node.prepend('<img id="lakitu" src= "https://www.mariowiki.com/images/thumb/e/ec/Lakitu-NSMBU.png/200px-Lakitu-NSMBU.png" />');
-  //this.$node.addClass(blueDancer);
+  this.$node.prepend('<img class="characterImages" src= "https://www.mariowiki.com/images/thumb/e/ec/Lakitu-NSMBU.png/200px-Lakitu-NSMBU.png" />');
+  //this.$node.addClass(Lakitu);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -15,10 +16,10 @@ var BlueDancer = function(top, left, timeBetweenSteps) {
     
 };
 
-BlueDancer.prototype = Object.create(Dancer.prototype);
-BlueDancer.prototype.constructor = BlueDancer;
+Lakitu.prototype = Object.create(Dancer.prototype);
+Lakitu.prototype.constructor = Lakitu;
 
-BlueDancer.prototype.step = function() {
+Lakitu.prototype.step = function() {
   Dancer.prototype.step.call(this);
   //this.$node.toggle();
 };

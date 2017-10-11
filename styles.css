@@ -39,6 +39,15 @@ body, a:link, a:visited, a:active{
 
 }
 
-.lakitu {
+.characters {
   border: none;
+  height: 100px;
+}
+
+.characterImages {
+  height: 100%;
+}
+
+.lakitu:hover {
+  border: 10px solid red;
 }
