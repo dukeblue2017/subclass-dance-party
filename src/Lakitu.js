@@ -22,5 +22,8 @@ Lakitu.prototype.constructor = Lakitu;
 Lakitu.prototype.step = function() {
   Dancer.prototype.step.call(this);
   //this.$node.toggle();
+  var left = this.$node[0].style.left;
+  this.$node[0].style.left = (Number(left.slice(0, left.length - 2))) - 10 + 'px';
+
 };
 
