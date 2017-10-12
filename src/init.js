@@ -30,9 +30,9 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
   });
 
-  $('.lineUpDancers').on('click', function(event){
+  $('.lineUpDancers').on('click', function(event) {
     var dancersOnFloor = $('.dancer');
-    var bodyWidth = $("body").width();
+    var bodyWidth = $('body').width();
     var widthBetween = bodyWidth / dancersOnFloor.length;
     var midLine = $('body').height() / 2;
     //here we need to divide bodyWidth by number of items
@@ -44,8 +44,31 @@ $(document).ready(function() {
 
   });
 
-  $('.lakitu').hover(function(event){
-    console.log(this);
-  }, function(event){console.log(2)});;
+  $('.lakitu').hover(function(event) {
+  }, function(event) { console.log(2)});;
+
+  $('.collisions').on('click', function(event) {
+    for (var i = 0; i < dancers.length - 1; i++) { 
+      for (var j = i + 1; j < dancers.length; j++) {
+        var dancerOne = dancers[i].$node[0].style;
+        var dancerOneLeft = Number(dancerOne.left.slice(0, dancerOne.left.length - 2));
+        var dancerOneTop = Number(dancerOne.top.slice(0, dancerOne.top.length - 2));
+
+        var dancerTwo = dancers[j].$node[0].style;
+        var dancerTwoLeft = Number(dancerTwo.left.slice(0, dancerTwo.left.length - 2));
+        var dancerTwoTop = Number(dancerTwo.top.slice(0, dancerTwo.top.length - 2));
+        
+        var leftDif = Math.abs(dancerOneLeft - dancerTwoLeft);
+        var topDif = Math.abs(dancerOneTop - dancerTwoTop);
+        var distance = Math.sqrt(topDif * topDif + leftDif * leftDif);
+ 
+        if (distance < 150) {
+          console.log('too close!');
+          dancers[i].$node.toggle();
+          dancers[j].$node.toggle();
+        }
+      }
+    }  
+  });
 });
 

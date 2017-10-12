@@ -23,4 +23,7 @@ BulletBill.prototype.step = function() {
   //this.$node.toggle();
   var left = this.$node[0].style.left;
   this.$node[0].style.left = (Number(left.slice(0, left.length - 2))) - 60 + 'px';
+  if (Number(left.slice(0, left.length - 2)) < -100) {
+    this.$node[0].style.left = '1200px';
+  }
 };
